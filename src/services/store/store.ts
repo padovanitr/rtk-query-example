@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { thronesApi } from '../api/thronesApiSlice'
 import counterReducer from './counterSlice/counterSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    [thronesApi.reducerPath]: thronesApi.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thronesApi.middleware),
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

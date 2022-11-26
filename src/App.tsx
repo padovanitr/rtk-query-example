@@ -1,10 +1,11 @@
-import Counter from './services/ui/components/Counter'
+import { useGetCharactersQuery } from './services/api/thronesApiSlice'
 
 function App() {
+  const { data: gameOfThronesCharacters, isLoading: isLoadingCharacters } = useGetCharactersQuery()
+  console.log('gameOfThronesCharacters', gameOfThronesCharacters)
+
   return (
-    <div className="App">
-      <Counter />
-    </div>
+    <div className="App">{isLoadingCharacters ? <h1>loading...</h1> : <h1>characters</h1>}</div>
   )
 }
 
