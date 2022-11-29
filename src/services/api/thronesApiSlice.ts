@@ -4,13 +4,13 @@ export const thronesApi = createApi({
   reducerPath: 'thronesApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://thronesapi.com/api/v2/' }),
   endpoints: (builder) => ({
-    getCharacters: builder.query<Characters, void>({
+    getCharacters: builder.query<CharactersType[], void>({
       query: () => 'Characters',
     }),
   }),
 })
 
-export type Characters = {
+export type CharactersType = {
   id: number
   firstName: string
   lastName: string

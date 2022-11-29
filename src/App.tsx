@@ -4,13 +4,12 @@ import CharactersList from './services/ui/components/CharactersList'
 import LoaderContainer from './services/ui/components/LoaderContainer'
 
 function App() {
-  const { data: gameOfThronesCharacters, isLoading: isLoadingCharacters } = useGetCharactersQuery()
-  console.log('gameOfThronesCharacters', gameOfThronesCharacters)
+  const { data: charactersData, isLoading: isLoadingCharacters } = useGetCharactersQuery()
 
   return (
     <Box>
       <LoaderContainer isLoading={isLoadingCharacters}>
-        <CharactersList />
+        <CharactersList characters={charactersData} />
       </LoaderContainer>
     </Box>
   )

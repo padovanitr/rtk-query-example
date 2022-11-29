@@ -1,5 +1,18 @@
-import React from 'react'
+import { Box, List, ListItem } from '@mui/material'
+import { CharactersType } from '../../../api/thronesApiSlice'
 
-export default function CharactersList() {
-  return <div>CharactersList</div>
+export interface CharactersListProps {
+  characters: CharactersType[] | undefined
+}
+
+export default function CharactersList({ characters }: CharactersListProps) {
+  return (
+    <Box>
+      <List>
+        <ListItem>item</ListItem>
+        <ListItem>item</ListItem>
+        <ListItem>item</ListItem>
+      </List>
+    </Box>
+  )
 }
