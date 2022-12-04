@@ -9,6 +9,5 @@ export const AppContainer = styled(Box)(
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #212121;
   `
 )
